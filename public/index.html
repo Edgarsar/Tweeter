@@ -8,7 +8,7 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
-  
+
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
@@ -16,9 +16,11 @@
 
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
- 
+
   <!-- font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,28 +35,41 @@
   <nav>
     <span>tweeter</span>
     <div>
-    <p><span>Write</span> a new tweet</p>
-    <i class="fa-solid fa-angles-down"></i>
-  </div>
+      <p><span>Write</span> a new tweet</p>
+      <i class="fa-solid fa-angles-down"></i>
+    </div>
   </nav>
 
   <header>
     <div>
-        <img src="/images/profile-hex.png"> 
+      <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-        <h2><span>Edgar</span> Sargsyan</h2>
+      <h2><span>Edgar</span> Sargsyan</h2>
     </div>
-</header>
+  </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-  <div>
-    <p>A handcrafted, small-batch, artisinal pour-over version of the classic lorem ipsum generator, Hipster Ipsum will give your mocks that blue collar touch.</p>
-    <p>In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration, try this Trump lorem ipsum generator on for size.</p>
-  </div>
-</main>
+    <!-- <div>
+      <p>A handcrafted, small-batch, artisinal pour-over version of the classic lorem ipsum generator, Hipster Ipsum
+        will give your mocks that blue collar touch.</p>
+      <p>In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration,
+        try this Trump lorem ipsum generator on for size.</p>
+    </div> -->
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="post" action="/tweets">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+  </main>
 </body>
 
 </html>
