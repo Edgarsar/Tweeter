@@ -1,0 +1,46 @@
+ .container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+
+.button-content {
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+ margin-left: 90px;
+margin-right: -90px;
+font-family: 'Bungee', cursive;
+}
+
+.counter{
+  margin-left: 2em;
+}
+
+section label {
+  margin-left: -82px;
+}
+
+button  {
+  text-transform: none;
+  background: #4056A1;
+  color: #ffffff;
+  
+}
+
+#tweet-text{
+    margin-left: 3.80em;
+    height: 40px;
+    width: 100%;
+    border: none;
+    border-bottom: 4px solid;
+    background: #f4f1ec;
+}
+
+
+output {
+
+  font-weight: bold;
+} 
