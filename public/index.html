@@ -64,22 +64,22 @@
   <main class="container">
 
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+      <!-- <h2>Compose Tweet</h2> -->
       <form method="POST" action="/tweets/">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
+        <!-- <label for="tweet-text">What are you humming about?</label> -->
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="button-content">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
+    <div class="shadow">
     <article class="tweets">
-      <!-- <div class="box-shadow"> -->
      
       <header>
         <span>Newton</span>
-        <span>@Sirlsaac.</span>
+        <span class="userName">@Sirlsaac.</span>
       </header>
       <div class="message">
         <p>If I have seen further it is by standing on the shoulders of giants</p>
@@ -95,7 +95,29 @@
       </footer>
     
     </article>
-  <!-- </div> -->
+  </div>
+  <div class="shadow">
+    <article class="tweets">
+     
+      <header>
+        <span>Edgar</span>
+        <span class="userName">@Sargsyan.</span>
+      </header>
+      <div class="message">
+        <p>If I have seen further it is by standing on the shoulders of giants</p>
+      </div>
+      <footer>
+        <span>15 days ago</span>
+        <div>
+        <i class="fa fa-flag" aria-hidden="true"></i>
+        <i class='fas fa-sync'></i>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+
+      </footer>
+    
+    </article>
+  </div>
     <div>
       <p>some text</p>
     </div>
