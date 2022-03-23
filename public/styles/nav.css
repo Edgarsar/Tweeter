@@ -1,12 +1,15 @@
 nav {
   color: #FFFFFF;
   height: 120px;
-  width: 100%;
   background: #4056A1;
   padding: 1.5em;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+    top: 0px;
+  width: 100%;
+
 }
 
 nav > span{
