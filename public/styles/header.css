@@ -1,4 +1,4 @@
-header {
+ .main {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -7,12 +7,12 @@ header {
     background-image: url(https://www.transparenttextures.com/patterns/asfalt-dark.png);
 }
 
-header h2 {
+.main h2 {
   color: #ffffff;
   font-weight: 300;
 }
 
-header h2 span {
+.main h2 span {
 
   font-weight: bold;
 }
