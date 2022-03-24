@@ -3,50 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Edgar",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@Sargsyan"
-    },
-    "content": {
-      "text": "Contrary to popular belief, Lorem Ipsum is not simply random text."
-    },
-    "created_at": 1461223432227
-  }
-];
+
+$(() => {
 
 
-
-$(()=>{
-
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
     const $tweet = $(`<div class="user">
     <article class="tweets">
      
@@ -78,17 +39,47 @@ $(()=>{
     return $tweet;
   };
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
-
-
   }
 
-  renderTweets(data);
+  const loadtweets = () => {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: (users) => {
+        renderTweets(users);
+      },
+      error: (err) => {
+        console.log(`error: ${err}`)
+      }
+    });
+  };
+
+  loadtweets();
+  const $submit = $("#submit-tweet");
+
+  $submit.submit(function (event) {
+    event.preventDefault();
+    console.log('The form was submitted!')
+    const serializedData = $(event.target).serialize();
+
+    $.post('/tweets/', serializedData, data => {
+      console.log(data)
+      loadtweets();
+
+    })
+  })
+
+  
+
+
+  // renderTweets(data)
 });
