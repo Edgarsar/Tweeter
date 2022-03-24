@@ -59,21 +59,23 @@
       <h2><span>Edgar</span> Sargsyan</h2>
     </div>
   </header>
-
+  
   <!-- Page-specific (main) content here -->
-  <main class="container" id="tweets-container">
-
+  <main class="container">
     <section class="new-tweet">
       <!-- <h2>Compose Tweet</h2> -->
-      <form method="POST" action="/tweets/">
+      <form method="POST" action="/tweets" id="submit-tweet">
         <!-- <label for="tweet-text">What are you humming about?</label> -->
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="button-content">
-          <button type="submit">Tweet</button>
+          <button id="submit-tweet" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
+
+    <section id="tweets-container"></section>
+   
 
 
     <!-- <div class="user">
