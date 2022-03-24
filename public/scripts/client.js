@@ -6,7 +6,6 @@
 
 $(() => {
 
-
   const createTweetElement = function (tweet) {
     const $tweet = $(`<div class="user">
     <article class="tweets">
@@ -22,7 +21,7 @@ $(() => {
         <p>${tweet.content.text}</p>
       </div>
       <footer>
-        <span>${tweet.created_at}</span>
+        <span>${timeago.format(tweet.created_at)}</span>
         <div>
         <i class="fa fa-flag" aria-hidden="true"></i>
         <i class='fas fa-sync'></i>
