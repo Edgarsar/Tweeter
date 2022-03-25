@@ -27,8 +27,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
     integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-    <!-- timeago library -->
+
+  <!-- timeago library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
     integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -67,9 +67,12 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <!-- <h2>Compose Tweet</h2> -->
+        <div class="error-message">
+         <i class="fas fa-exclamation-triangle"></i>
+        <span class="error-type">The form should not be cleared</span>
+        <i class="fas fa-exclamation-triangle"></i>
+    </div> 
       <form method="POST" action="/tweets" id="submit-tweet">
-        <!-- <label for="tweet-text">What are you humming about?</label> -->
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="button-content">
           <button id="submit-tweet" type="submit">Tweet</button>
@@ -79,32 +82,6 @@
     </section>
 
     <section id="tweets-container"></section>
-
-
-
-    <!-- <div class="user">
-      <article class="tweets">
-        <header>
-          <div class="user-name">
-            <img src="https://i.imgur.com/73hZDYK.png" alt="Newton">
-            <span>Newton</span>
-          </div>
-          <span class="userName">@Sirlsaac.</span>
-        </header>
-        <div class="message">
-          <p>If I have seen further it is by standing on the shoulders of giants</p>
-        </div>
-        <footer>
-          <span>10 days ago</span>
-          <div>
-            <i class="fa fa-flag" aria-hidden="true"></i>
-            <i class='fas fa-sync'></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article>
-    </div> -->
-
 
   </main>
 </body>
