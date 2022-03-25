@@ -4,7 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 $(() => {
+  // Function that prevents Cross-Site Scripting
+  const escape = function (str) {
+    let p = document.createElement("p");
+    p.appendChild(document.createTextNode(str));
+    return p.innerHTML;
+  };
 
   const createTweetElement = function(tweet) {
     const $tweet = $(`<div class="user">
@@ -18,7 +25,7 @@ $(() => {
         <span class="userName">${tweet.user.handle}</span>
       </header>
       <div class="message">
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
       </div>
       <footer>
         <span>${timeago.format(tweet.created_at)}</span>
