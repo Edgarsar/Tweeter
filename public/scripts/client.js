@@ -6,7 +6,7 @@
 
 $(() => {
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const $tweet = $(`<div class="user">
     <article class="tweets">
      
@@ -38,7 +38,7 @@ $(() => {
     return $tweet;
   };
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -46,7 +46,7 @@ $(() => {
       // takes return value and appends it to the tweets container
       $('#tweets-container').prepend($tweet);
     }
-  }
+  };
 
   const loadtweets = () => {
     $.ajax({
@@ -57,7 +57,7 @@ $(() => {
         renderTweets(users);
       },
       error: (err) => {
-        console.log(`error: ${err}`)
+        console.log(`error: ${err}`);
       }
     });
   };
@@ -65,19 +65,22 @@ $(() => {
   loadtweets();
   const $submit = $("#submit-tweet");
 
-  $submit.submit(function (event) {
+  $submit.submit(function(event) {
     event.preventDefault();
-    console.log('The form was submitted!')
-    const serializedData = $(event.target).serialize();
+    const userInput = $(event.target).serializeArray()[0].value;
+    if (!userInput) {
+      alert("The form should not be cleared");
+    } else if (userInput.length > 140) {
+      alert("Maximum message length exceeded");
+    } else {
+      const serializedData = $(event.target).serialize();
+      $.post('/tweets/', serializedData, data => {
+        loadtweets();
+      });
+    }
+  });
 
-    $.post('/tweets/', serializedData, data => {
-      console.log(data)
-      loadtweets();
 
-    })
-  })
-
-  
 
 
   // renderTweets(data)
