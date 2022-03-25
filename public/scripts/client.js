@@ -13,7 +13,7 @@ $(() => {
     return p.innerHTML;
   };
 
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
     const $tweet = $(`<div class="user">
     <article class="tweets">
      
@@ -45,7 +45,7 @@ $(() => {
     return $tweet;
   };
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -70,19 +70,45 @@ $(() => {
   };
 
   loadtweets();
+
   const $submit = $("#submit-tweet");
 
-  $submit.submit(function(event) {
+  $submit.submit(function (event) {
     event.preventDefault();
     const userInput = $(event.target).serializeArray()[0].value;
+    // checks textarea is empty or not
     if (!userInput) {
-      alert("The form should not be cleared");
+      // display appropriate error message
+      if ($(".error-message").first().is(":hidden")) {
+        $(".error-message").slideDown("slow");
+      } else {
+        $(".error-message").hide();
+      }
+      // checks maximum message length then display appropriate error message
     } else if (userInput.length > 140) {
-      alert("Maximum message length exceeded");
+      // if it's over 140 characters then display appropriate error message
+      if ($(".error-message").first().is(":hidden")) {
+        $(".error-type").html("Maximum message length exceeded")
+        $(".error-message").slideDown("slow");
+      } else {
+        $(".error-message").hide();
+        // then clear textarea
+        $submit[0].reset();
+        // get back the characters length and color
+        $(".counter").html(140).css("color", "#545149");
+
+      }
     } else {
       const serializedData = $(event.target).serialize();
       $.post('/tweets/', serializedData, data => {
         loadtweets();
+        // after submit clear textarea
+        $submit[0].reset();
+        // display output back to 140
+        $(".counter").html(140);
+
+
+
       });
     }
   });
