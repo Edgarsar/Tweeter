@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!-- App CSS -->
+
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -49,8 +51,9 @@
   <nav>
     <span>tweeter</span>
     <div>
-      <p><span>Write</span> a new tweet</p>
-      <i class="fa-solid fa-angles-down"></i>
+      <p><span>Write</span> a <button id="slide-up" type="button">new</button> tweet</p>
+      <div class="animate"> <i class="fa-solid fa-angles-down"></i></div>
+
     </div>
   </nav>
 
@@ -58,7 +61,6 @@
     <div>
       <img src="/images/profile-hex.png">
     </div>
-    <br>
     <div>
       <h2><span>Edgar</span> Sargsyan</h2>
     </div>
@@ -67,11 +69,11 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-        <div class="error-message">
-         <i class="fas fa-exclamation-triangle"></i>
+      <div class="error-message">
+        <i class="fas fa-exclamation-triangle"></i>
         <span class="error-type">The form should not be cleared</span>
         <i class="fas fa-exclamation-triangle"></i>
-    </div> 
+      </div>
       <form method="POST" action="/tweets" id="submit-tweet">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div class="button-content">
