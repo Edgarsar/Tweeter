@@ -1,6 +1,6 @@
 nav {
   color: #FFFFFF;
-  height: 120px;
+  height: 96px;
   background: #4056A1;
   padding: 1.5em;
   display: flex;
@@ -13,24 +13,48 @@ nav {
 }
 
 nav > span{
+  font-size: xx-large;
   font-family: 'Bungee', cursive;
+  margin-top: 1.5em;
   
 }
 nav p {
-margin: 0px;
-
+    margin: 0px 25px 0px -83px;
+    /* margin-right:
+    margin-left: -83px; */
+    /* padding: -13px; */
 }
 
 nav p span {
   font-weight: bold;
 }
 
-nav div {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+
+
+.animate {
+color : #FF0000;
+animation: bounce 2s infinite;
 }
 
-nav i {
-color : #FF0000;
+@keyframes bounce {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 10px); }
+  to   { transform: translate(0, -0px); }    
+}
+
+
+
+
+#slide-up {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+}
+
+#slide-up:hover {
+  color:#2b2b2b;
+  /* background: #FF0000; */
+
 }
