@@ -61,6 +61,8 @@ $(() => {
       method: 'GET',
       dataType: 'json',
       success: (users) => {
+        //clear the existing tweets
+        $('#tweets-container').empty();
         renderTweets(users);
       },
       error: (err) => {
