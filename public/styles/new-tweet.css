@@ -64,3 +64,26 @@ button  {
   padding: 8px;
 }
 
+
+
+
+#scroll-top {
+  position:fixed;
+right: 10px;
+bottom: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #e62737;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  border:none;
+  display: none;
+}
+
+#scroll-top:hover {
+background: #cc2333
+
+
+}
