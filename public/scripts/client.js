@@ -114,10 +114,6 @@ $(() => {
       });
     }
   });
-  // event that slides up the page and enable the textarea automatically
-  $('#slide-up').click(function(e){
-    $(document).scrollTop(0).click(function(){$("#tweet-text").focus()})
-  });
   
 
 });
