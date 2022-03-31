@@ -7,52 +7,61 @@ nav {
   background: #4056A1;
   padding: 1.5em;
   position: fixed;
-    top: 0px;
+  top: 0px;
   width: 100%;
 
 }
 
-nav > span{
+
+nav>span {
   font-size: xx-large;
   font-family: 'Bungee', cursive;
   margin-top: 1.5em;
-  
+
 }
+
+
 nav p {
-    margin: 0px 25px 0px -83px;
-    
+  margin: 0px 0px 0px -83px;
+
 }
+
 
 nav p span {
   font-weight: bold;
 }
 
 
-
 .animate {
-color : #FF0000;
-animation: bounce 2s infinite;
+  color: #FF0000;
+  animation: bounce 2s infinite;
 }
+
 
 @keyframes bounce {
-  from { transform: translate(0,  0px); }
-  65%  { transform: translate(0, 10px); }
-  to   { transform: translate(0, -0px); }    
+  from {
+    transform: translate(0, 0px);
+  }
+
+  65% {
+    transform: translate(0, 10px);
+  }
+
+  to {
+    transform: translate(0, -0px);
+  }
 }
-
-
 
 
 #slide-up {
-  background:none;
-  border:none;
-  margin:0;
-  padding:0;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
 }
 
-#slide-up:hover {
-  color:#DBDBDB
-  /* background: #FF0000; */
 
+#slide-up:hover {
+  color: #DBDBDB
 }
