@@ -3,17 +3,18 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
+/* global $ */
 
 $(() => {
   // Function that prevents Cross-Site Scripting
-  const escape = function (str) {
+  const escape = function(str) {
     let p = document.createElement("p");
     p.appendChild(document.createTextNode(str));
     return p.innerHTML;
   };
 
-  const createTweetElement = function (tweet) {
+  // function that takes in a tweet object and returns a tweet <article> element containing the entire HTML structure of the tweet
+  const createTweetElement = function(tweet) {
     const $tweet = $(`<div class="user">
     <article class="tweets">
      
@@ -40,12 +41,11 @@ $(() => {
     </article>
   </div> `);
 
-
-
     return $tweet;
   };
 
-  const renderTweets = function (tweets) {
+  // function that takes in an array of tweet objects and then appending each one to the #tweets-container
+  const renderTweets = function(tweets) {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -54,7 +54,7 @@ $(() => {
       $('#tweets-container').prepend($tweet);
     }
   };
-
+  // function that fetches tweets from the http://localhost:8080/tweets page
   const loadtweets = () => {
     $.ajax({
       url: '/tweets',
@@ -71,11 +71,11 @@ $(() => {
     });
   };
 
-  loadtweets(); 
+  loadtweets();
 
   const $submit = $("#submit-tweet");
 
-  $submit.submit(function (event) {
+  $submit.submit(function(event) {
     event.preventDefault();
     const userInput = $(event.target).serializeArray()[0].value;
     // checks textarea is empty or not
@@ -90,7 +90,7 @@ $(() => {
     } else if (userInput.length > 140) {
       // if it's over 140 characters then display appropriate error message
       if ($(".error-message").first().is(":hidden")) {
-        $(".error-type").html("Maximum message length exceeded")
+        $(".error-type").html("Maximum message length exceeded");
         $(".error-message").slideDown("slow");
       } else {
         $(".error-message").hide();
@@ -101,6 +101,7 @@ $(() => {
 
       }
     } else {
+
       const serializedData = $(event.target).serialize();
       $.post('/tweets/', serializedData, data => {
         loadtweets();
@@ -108,12 +109,13 @@ $(() => {
         $submit[0].reset();
         // display output back to 140
         $(".counter").html(140);
-
+        // when user input is valid then hide the error message
+        $(".error-message").hide();
 
 
       });
     }
   });
-  
+
 
 });
