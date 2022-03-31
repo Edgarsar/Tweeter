@@ -4,9 +4,9 @@ Tweeter is a single-page Twitter clone, where users can create short posts of up
 
 ## Final Product
 
-!["screenshot of login page"](https://github.com/Edgarsar/tinyapp/blob/master/docs/login-page.png?raw=true)
-!["screenshot of urls page"](https://github.com/Edgarsar/tinyapp/blob/master/docs/urls-page.png?raw=truee)
-!["screenshot of my Urls page"](https://github.com/Edgarsar/tinyapp/blob/master/docs/urls-show.png?raw=truee)
+!["screenshot of mobile view"]()
+!["screenshot of tablet view"]()
+!["screenshot of desktop view"]()
 
 
 ## Dependencies

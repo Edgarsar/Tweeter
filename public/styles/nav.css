@@ -5,7 +5,7 @@ nav {
   color: #FFFFFF;
   height: 96px;
   background: #4056A1;
-  padding: 1.5em;
+  padding: 24px;
   position: fixed;
   top: 0px;
   width: 100%;
@@ -16,7 +16,7 @@ nav {
 nav>span {
   font-size: xx-large;
   font-family: 'Bungee', cursive;
-  margin-top: 1.5em;
+  margin-top: 24px;
 
 }
 
