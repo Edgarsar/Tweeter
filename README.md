@@ -4,18 +4,18 @@ Tweeter is a single-page Twitter clone, where users can create short posts of up
 
 ## Final Product
 
-!["screenshot of mobile view"]()
-!["screenshot of tablet view"]()
-!["screenshot of desktop view"]()
+!["screenshot of mobile view"](https://github.com/Edgarsar/Tweeter/blob/master/docs/mobile_view.png?raw=true)
+!["screenshot of tablet view"](https://github.com/Edgarsar/Tweeter/blob/master/docs/tablet_view.png?raw=true)
+!["screenshot of desktop view"](https://github.com/Edgarsar/Tweeter/blob/master/docs/desktop_view.png?raw=true)
 
 
 ## Dependencies
 
 - Express
 - Node 5.10.x or above
--body-parser
--chance
--md5
+- body-parser
+- chance
+- md5
 
 
 ## Getting Started
