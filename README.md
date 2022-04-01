@@ -20,6 +20,6 @@ Tweeter is a single-page Twitter clone, where users can create short posts of up
 
 ## Getting Started
 
--Install dependencies using the `npm install` command.
--Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
--Go to <http://localhost:8080/> in your browser.
+- Install dependencies using the `npm install` command.
+- Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+- Go to <http://localhost:8080/> in your browser.
