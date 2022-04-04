@@ -7,14 +7,14 @@
 
 $(() => {
   // Function that prevents Cross-Site Scripting
-  const escape = function(str) {
+  const escape = function (str) {
     let p = document.createElement("p");
     p.appendChild(document.createTextNode(str));
     return p.innerHTML;
   };
 
   // function that takes in a tweet object and returns a tweet <article> element containing the entire HTML structure of the tweet
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
     const $tweet = $(`<div class="user">
     <article class="tweets">
      
@@ -45,7 +45,7 @@ $(() => {
   };
 
   // function that takes in an array of tweet objects and then appending each one to the #tweets-container
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
@@ -75,13 +75,14 @@ $(() => {
 
   const $submit = $("#submit-tweet");
 
-  $submit.submit(function(event) {
+  $submit.submit(function (event) {
     event.preventDefault();
     const userInput = $(event.target).serializeArray()[0].value;
     // checks textarea is empty or not
     if (!userInput) {
       // display appropriate error message
       if ($(".error-message").first().is(":hidden")) {
+        $(".error-type").html("The form should not be cleared");
         $(".error-message").slideDown("slow");
       } else {
         $(".error-message").hide();
